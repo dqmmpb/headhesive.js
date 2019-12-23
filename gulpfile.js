@@ -47,7 +47,7 @@ gulp.task('bump:major', function () { return bumpVer('major'); })
  * Tasks
  */
 gulp.task('clean', function (cb) {
-  del(['dist'], cb)
+  del(['dist'], cb);
 });
 
 gulp.task('compile', function () {
@@ -63,9 +63,7 @@ gulp.task('compile', function () {
     .pipe(gulp.dest(config.dest));
 });
 
-gulp.task('default', ['clean'], function () {
-  gulp.start('compile');
-});
+gulp.task('default', gulp.series('clean', 'compile'));
 
 gulp.task('watch', function () {
   gulp.watch(config.src, ['compile']);

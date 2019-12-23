@@ -119,7 +119,7 @@
      */
     stick: function () {
       if (!this.visible) {
-        this.clonedElem.className = this.clonedElem.className.replace(new RegExp('(^|\\s)*' + this.options.classes.unstick + '(\\s|$)*', 'g'), '');
+        this.clonedElem.className = this.clonedElem.className.replace(new RegExp('(^|\\s)*' + this.options.classes.unstick, 'g'), '');
         this.clonedElem.className += ' ' + this.options.classes.stick;
         this.visible = true;
 
@@ -133,7 +133,7 @@
      */
     unstick: function () {
       if (this.visible) {
-        this.clonedElem.className = this.clonedElem.className.replace(new RegExp('(^|\\s)*' + this.options.classes.stick + '(\\s|$)*', 'g'), '');
+        this.clonedElem.className = this.clonedElem.className.replace(new RegExp('(^|\\s)*' + this.options.classes.stick, 'g'), '');
         this.clonedElem.className += ' ' + this.options.classes.unstick;
         this.visible = false;
 

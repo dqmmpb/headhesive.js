@@ -1,5 +1,5 @@
 /*!
- * Headhesive.js v1.2.3 - An on-demand sticky header
+ * Headhesive.js v1.2.4 - An on-demand sticky header
  * Author: Copyright (c) Mark Goodyear <@markgdyr> <http://markgoodyear.com>
  * Url: http://markgoodyear.com/labs/headhesive
  * License: MIT
@@ -124,7 +124,7 @@
     },
     stick: function() {
       if (!this.visible) {
-        this.clonedElem.className = this.clonedElem.className.replace(new RegExp("(^|\\s)*" + this.options.classes.unstick + "(\\s|$)*", "g"), "");
+        this.clonedElem.className = this.clonedElem.className.replace(new RegExp("(^|\\s)*" + this.options.classes.unstick, "g"), "");
         this.clonedElem.className += " " + this.options.classes.stick;
         this.visible = true;
         this.options.onStick.call(this);
@@ -132,7 +132,7 @@
     },
     unstick: function() {
       if (this.visible) {
-        this.clonedElem.className = this.clonedElem.className.replace(new RegExp("(^|\\s)*" + this.options.classes.stick + "(\\s|$)*", "g"), "");
+        this.clonedElem.className = this.clonedElem.className.replace(new RegExp("(^|\\s)*" + this.options.classes.stick, "g"), "");
         this.clonedElem.className += " " + this.options.classes.unstick;
         this.visible = false;
         this.options.onUnstick.call(this);
